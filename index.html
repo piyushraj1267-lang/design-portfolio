@@ -224,9 +224,34 @@
 
       </div>
 
-      <!-- Designs Cards Grid -->
+<!-- Designs Cards Grid -->
       <div id="designs-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- Rendered dynamically by app.js -->
+        <!-- Design Card Start -->
+        <div class="glass-panel p-5 rounded-2xl border border-slate-800 hover:border-cyan-500/40 transition-all flex flex-col justify-between">
+          <div>
+            <div class="h-48 bg-slate-900 rounded-xl overflow-hidden border border-slate-800/80 mb-4">
+              <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80" alt="Design Preview" class="w-full h-full object-cover">
+            </div>
+            
+            <div class="flex items-center justify-between mb-2">
+              <span class="bg-cyan-950 text-cyan-400 border border-cyan-800 text-[11px] px-2.5 py-0.5 rounded font-mono">
+                CAD Design
+              </span>
+              <span class="text-[11px] font-mono text-slate-500">2026-08-23</span>
+            </div>
+
+            <h3 class="text-lg font-bold text-slate-100 mb-2">My New CAD Project</h3>
+            <p class="text-slate-400 text-xs leading-relaxed mb-4">
+              Brief summary and details of your engineering design model.
+            </p>
+          </div>
+
+          <div class="pt-3 border-t border-slate-800/80 flex flex-wrap gap-1.5 font-mono text-[10px]">
+            <span class="bg-slate-900 text-slate-300 px-2 py-0.5 rounded border border-slate-800">SolidWorks</span>
+            <span class="bg-slate-900 text-slate-300 px-2 py-0.5 rounded border border-slate-800">KeyShot</span>
+          </div>
+        </div>
+        <!-- Design Card End -->
       </div>
 
       <!-- Empty State -->
