@@ -1,0 +1,166 @@
+/* Custom Engineering & CAD Design Portfolio Styles */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&display=swap');
+
+:root {
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --color-primary: #38bdf8; /* Cyan-400 */
+  --color-accent: #f59e0b;  /* Amber-500 */
+  --color-bg-dark: #0b0f19;
+  --color-card-bg: rgba(15, 23, 42, 0.75);
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-bg-dark);
+  color: #f8fafc;
+  overflow-x: hidden;
+}
+
+/* Blueprint Grid Background Pattern */
+.bg-grid-pattern {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(51, 65, 85, 0.25) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(51, 65, 85, 0.25) 1px, transparent 1px);
+}
+
+.radial-vignette {
+  background: radial-gradient(circle at 50% 20%, rgba(56, 189, 248, 0.08) 0%, rgba(11, 15, 25, 0.95) 75%);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #090d16;
+}
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #38bdf8;
+}
+
+/* Glassmorphism Cards */
+.glass-panel {
+  background: var(--color-card-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(51, 65, 85, 0.6);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-panel:hover {
+  border-color: rgba(56, 189, 248, 0.5);
+  box-shadow: 0 10px 30px -10px rgba(56, 189, 248, 0.15);
+  transform: translateY(-3px);
+}
+
+/* Design Image Container Hover Effect */
+.card-img-wrapper {
+  overflow: hidden;
+  position: relative;
+}
+.card-img-wrapper img, .card-img-wrapper svg {
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.glass-panel:hover .card-img-wrapper img,
+.glass-panel:hover .card-img-wrapper svg {
+  transform: scale(1.05);
+}
+
+/* Monospace Technical Badges */
+.badge-tech {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.025em;
+}
+
+/* Category Filter Active State */
+.filter-btn {
+  transition: all 0.2s ease-in-out;
+}
+.filter-btn.active {
+  background-color: #0284c7;
+  color: #ffffff;
+  border-color: #38bdf8;
+  box-shadow: 0 0 15px rgba(56, 189, 248, 0.3);
+}
+
+/* Modal Dialog Backdrop & Animation */
+dialog::backdrop {
+  background: rgba(3, 7, 18, 0.85);
+  backdrop-filter: blur(8px);
+}
+
+dialog[open] {
+  animation: modalSlideIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Image Dropzone Dragging */
+.dropzone {
+  border: 2px dashed #475569;
+  transition: all 0.2s ease;
+}
+.dropzone.dragover {
+  border-color: #38bdf8;
+  background-color: rgba(56, 189, 248, 0.08);
+}
+
+/* Custom Toast Alerts */
+#toast-container {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.toast {
+  background: #0f172a;
+  color: #f8fafc;
+  border-left: 4px solid #38bdf8;
+  padding: 14px 20px;
+  border-radius: 6px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  animation: toastIn 0.3s ease forwards;
+}
+
+.toast.toast-success { border-left-color: #10b981; }
+.toast.toast-danger { border-left-color: #ef4444; }
+
+@keyframes toastIn {
+  from { opacity: 0; transform: translateX(50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* Smooth Image Carousel Thumbnails */
+.carousel-thumb {
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.carousel-thumb.active {
+  border-color: #38bdf8;
+  opacity: 1 !important;
+}
